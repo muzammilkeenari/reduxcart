@@ -25,7 +25,7 @@ const cartSlice= createSlice({
                 // alert('item added to cart')
                 Swal.fire({
                     title: 'success',
-                    text: 'item quantity updated',
+                    text: 'item added to cart',
                     icon: 'success'
                     
                     })
@@ -34,7 +34,13 @@ const cartSlice= createSlice({
         },
         removeFromCart:(state,action)=>{
             state.cart=state.cart.filter(item=>item.id!=action.payload)
-            alert('item removed from cart')
+            // alert('item removed from cart')
+            Swal.fire({
+                    title: 'removed',
+                    text: 'item removed from cart',
+                    icon: 'error'
+                    
+                    })
         },
         increaseQuantity:(state,action)=>{
             const product=state.cart.find(item =>item. id==action.payload)
